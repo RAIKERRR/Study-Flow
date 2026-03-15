@@ -47,10 +47,25 @@ Switch between light and dark UI themes.
 **🛠 Tech Stack**
 
 Frontend:
+
    React
    TypeScript
    React Flow (workflow visualization)
+   
 State Management:
+
    Zustand
+   
 Build Tool:
+
   Vite
+
+## Screenshots
+
+![](Screenshot%202026-03-15%20121313.png)
+
+![](Screenshot%202026-03-15%20121331.png)
+
+![](Screenshot%202026-03-15%20121342.png)
+
+![](Screenshot%202026-03-15%20121348.png)
