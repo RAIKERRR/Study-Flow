@@ -1,0 +1,95 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* ---------- DARK MODE ---------- */
+
+.app-container.dark {
+  background: #0f172a;
+  color: white;
+}
+
+/* sidebar */
+.app-container.dark .sidebar {
+  background: #020617;
+}
+
+/* inspector */
+.app-container.dark .inspector {
+  background: #020617;
+}
+
+/* console */
+.app-container.dark .console {
+  background: black;
+}
+
+/* taskbar */
+.app-container.dark .taskbar {
+  background: #020617;
+}
+
+
+
+/* ---------- LIGHT MODE ---------- */
+
+.app-container.light {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* sidebar */
+.app-container.light .sidebar {
+  background: #ffffff;
+}
+
+/* inspector */
+.app-container.light .inspector {
+  background: #ffffff;
+}
+
+/* console */
+.app-container.light .console {
+  background: #f8fafc;
+}
+
+/* taskbar */
+.app-container.light .taskbar {
+  background: #ffffff;
+}

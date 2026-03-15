@@ -1,26 +1,73 @@
-**StudyFlow – Visual Study Automation Builder**
+# React + TypeScript + Vite
 
-StudyFlow is a visual workflow automation tool designed to simulate study routines. It allows users to build workflows using a drag-and-drop interface with Trigger, Condition, and Action nodes. The project demonstrates how study activities can be automated using logical workflows similar to tools like Node-RED and Zapier.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-**Features**
+Currently, two official plugins are available:
 
-1. Drag and drop workflow editor
-2. Trigger, Condition, and Action nodes
-3. Node connections using ReactFlow
-4. Study routine automation simulation
-5. Execution logs console
-6. Undo / Redo functionality
-7. Import and Export workflow
-8. Local storage persistence (workflow saved on refresh)
-9. Animated edges between nodes
-10. Node execution highlighting
-11. Workflow validation before execution
-**Example Workflow**
- Example study automation: Start Study Session → Study Time > 30 minutes → Take Break This workflow simulates a study session and checks whether the study duration exceeds a defined threshold.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-**Tech Stack** 
-1.React 
-2. TypeScript 
-3. ReactFlow 
-4. Zustand (state management) 
-5. Vite
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
